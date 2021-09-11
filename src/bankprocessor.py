@@ -7,7 +7,6 @@ class BankProcessor(ABC):
     def __init__(self):
         self.account = None
 
-    @abstractmethod
     def check_account(self, _bank: bank.Bank, _person: person.Person):
         for acc in _bank.accounts:
             if (acc.get_name() == _person.get_name()):

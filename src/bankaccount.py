@@ -8,7 +8,6 @@ class BankAccount(ABC):
         self.gender: str = _gender
         self.balance: float = 0
     
-    @abstractmethod
     def deposit(self, _amount) -> float: self.balance += _amount
     def withdraw(self, _amount) -> float: self.balance -= _amount
     def get_name(self) -> str: return self.name
@@ -23,8 +22,11 @@ class CheckingAccount(BankAccount):
         self.name: str = _name
         self.age: int = _age
         self.gender: str = _gender
-        self.pinnumber = _pinnumber
+        self.pinnumber: str = _pinnumber
         self.balance: float = 0
+
+    def get_pin(self) -> str: return self.pinnumber
+    def set_pin(self, _newpin: str) -> str: self.pinnumber = _newpin
 
 class SavingsAccount(BankAccount):
     def __init__(self, _accname: str, _name: str, _age: int, _gender: str, _interest: float):
@@ -34,3 +36,5 @@ class SavingsAccount(BankAccount):
         self.gender: str = _gender
         self.balance: float = 0
         self.interest_rate: float = _interest
+    
+    def get_interest(self) -> float: return self.interest
