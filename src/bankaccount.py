@@ -18,23 +18,15 @@ class BankAccount(ABC):
 
 class CheckingAccount(BankAccount):
     def __init__(self, _accname: str, _name: str, _age: int, _gender: str, _pinnumber: str):
-        self.accname: str = _accname
-        self.name: str = _name
-        self.age: int = _age
-        self.gender: str = _gender
+        super().__init__(_accname, _name, _age, _gender)
         self.pinnumber: str = _pinnumber
-        self.balance: float = 0
 
     def get_pin(self) -> str: return self.pinnumber
     def set_pin(self, _newpin: str) -> str: self.pinnumber = _newpin
 
 class SavingsAccount(BankAccount):
     def __init__(self, _accname: str, _name: str, _age: int, _gender: str, _interest: float):
-        self.accname: str = _accname
-        self.name: str = _name
-        self.age: int = _age
-        self.gender: str = _gender
-        self.balance: float = 0
+        super().__init__(_accname, _name, _age, _gender)
         self.interest_rate: float = _interest
     
     def get_interest(self) -> float: return self.interest
