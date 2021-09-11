@@ -16,7 +16,7 @@ class Bank():
         return self.total_invault
 
     def add_account(self, _accname, _person: person.Person):
-        self.accounts.append(bankaccount.BankAccount(_person.get_name(), _person.get_name(), _person.get_age(), _person.get_gender()))
+        self.accounts.append(bankaccount.CheckingAccount(_person.get_name(), _person.get_name(), _person.get_age(), _person.get_gender(), "0123"))
     
     def display_account(self, account):
         accname = account.get_accname()
@@ -35,3 +35,4 @@ class Bank():
         return self.name
     
     def get_totalvalue(self) -> float: return self.total_invault
+

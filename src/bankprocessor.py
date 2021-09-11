@@ -3,7 +3,7 @@ import bank
 import bankaccount
 from abc import ABC, abstractmethod
 
-class BankProcessor:
+class BankProcessor(ABC):
     def __init__(self):
         self.account = None
 
